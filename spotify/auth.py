@@ -3,10 +3,13 @@ from django.utils import timezone
 from .models import SpotifyUser
 from requests import post, Request
 from datetime import timedelta
+import yaml
 
 
-CLIENT_ID = "908d3e07450148849b073e188ba0216a"
-CLIENT_SECRET = "d14f7cf76e734ba1b32e43b79f5e48cb"
+with open("../credentials.yaml", 'r') as file:
+    config = yaml.safe_load(file)
+CLIENT_ID = config['SPOTIFY_CLIENT_ID']
+CLIENT_SECRET = config['SPOTIFY_CLIENT_SECRET']
 REDIRECT_URI = "http://localhost:8001/spotify/redirect"
 
 SCOPES = [
