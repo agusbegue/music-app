@@ -1,0 +1,737 @@
+17:55:43,315 asyncio DEBUG Using proactor: IocpProactor
+17:55:43,316 djongo.database DEBUG New MongoClient connection
+17:55:43,514 djongo.base DEBUG New Database connection
+17:55:45,258 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:55:45,261 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:55:45,434 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:55:45,434 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:55:45,435 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:55:45,436 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:55:45,436 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:55:45,436 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:55:45,436 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:55:45,437 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:55:45,437 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:55:45,437 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:55:45,437 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:55:45,437 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:55:45,438 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:55:45,438 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:55:45,438 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:55:45,438 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:55:45,438 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:55:45,439 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:55:45,439 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:55:45,439 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:55:45,440 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:55:45,440 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:55:45,440 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:55:45,440 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:56:00,494 djongo.base DEBUG MongoClient connection closed
+17:56:08,436 asyncio DEBUG Using proactor: IocpProactor
+17:56:08,438 djongo.database DEBUG New MongoClient connection
+17:56:08,506 djongo.base DEBUG New Database connection
+17:56:10,177 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:56:10,179 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:56:10,366 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:56:10,366 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:56:10,367 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:56:10,367 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:56:10,367 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:56:10,368 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:56:10,368 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:56:10,368 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:56:10,368 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:56:10,369 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:56:10,369 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:56:10,369 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:56:10,369 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:56:10,370 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:56:10,370 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:56:10,370 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:56:10,370 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:56:10,370 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:56:10,371 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:56:10,371 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:56:10,372 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:56:10,372 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:56:10,372 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:56:10,373 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:56:10,559 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:56:10,561 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:56:10,741 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:56:10,741 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:56:10,742 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:56:10,742 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:56:10,742 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:56:10,742 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:56:10,742 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:56:10,743 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:56:10,743 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:56:10,743 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:56:10,743 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:56:10,743 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:56:10,743 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:56:10,744 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:56:10,745 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:56:13,108 djongo.sql2mongo.query DEBUG sql_command: ALTER TABLE "api_artist" ADD COLUMN "created_at" date DEFAULT %(0)s NOT NULL
+params: [datetime.datetime(2021, 12, 6, 0, 0)]
+17:56:13,526 djongo.sql2mongo.query DEBUG sql_command: ALTER TABLE "api_artist" ALTER COLUMN "created_at" DROP DEFAULT
+params: []
+17:56:13,530 djongo.sql2mongo.query DEBUG sql_command: ALTER TABLE "api_artistpopularity" ALTER COLUMN "id" TYPE int
+params: []
+17:56:13,531 djongo.sql2mongo.query WARNING Not implemented alter command for SQL ALTER TABLE "api_artistpopularity" ALTER COLUMN "id" TYPE int
+17:56:13,717 djongo.base DEBUG MongoClient connection closed
+17:58:04,434 asyncio DEBUG Using proactor: IocpProactor
+17:58:04,435 djongo.database DEBUG New MongoClient connection
+17:58:04,593 djongo.base DEBUG New Database connection
+17:58:06,580 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:58:06,583 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:58:06,761 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:58:06,762 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:58:06,762 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:58:06,762 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:58:06,763 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:58:06,763 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:58:06,763 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:58:06,764 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:58:06,764 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:58:06,764 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:58:06,765 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:58:06,765 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:58:06,765 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:58:06,766 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:58:06,766 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:58:06,766 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:58:06,767 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:58:06,768 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:58:06,768 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:58:06,769 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:58:06,770 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:58:06,770 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:58:06,770 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:58:06,771 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:58:06,992 djongo.base DEBUG MongoClient connection closed
+17:58:13,973 asyncio DEBUG Using proactor: IocpProactor
+17:58:13,974 djongo.database DEBUG New MongoClient connection
+17:58:14,75 djongo.base DEBUG New Database connection
+17:58:15,666 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:58:15,669 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:58:15,840 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:58:15,840 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:58:15,840 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:58:15,841 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:58:15,841 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:58:15,841 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:58:15,841 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:58:15,842 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:58:15,842 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:58:15,842 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:58:15,842 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:58:15,843 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:58:15,843 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:58:15,843 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:58:15,843 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:58:15,843 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:58:15,843 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:58:15,843 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:58:15,843 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:58:15,843 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:58:15,844 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:58:15,844 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:58:15,844 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:58:15,844 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:58:16,15 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:58:16,18 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:58:16,188 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:58:16,188 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:58:16,188 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:58:16,188 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:58:16,189 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:58:16,189 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:58:16,189 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:58:16,190 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:58:16,190 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:58:16,190 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:58:16,190 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:58:16,190 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:58:16,191 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:58:16,191 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:58:16,191 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:58:16,191 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:58:16,192 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:58:16,192 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:58:16,192 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:58:16,192 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:58:16,192 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:58:16,193 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:58:16,193 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:58:16,193 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:58:16,595 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:58:16,597 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:58:16,765 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:58:16,765 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:58:16,765 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:58:16,765 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:58:16,765 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:58:16,766 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:58:16,767 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:58:16,767 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:58:16,767 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:58:16,767 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:58:16,767 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:58:16,767 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:58:16,767 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:58:16,767 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:58:16,767 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:58:16,769 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('admin',)
+17:58:16,770 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'admin'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:16,941 djongo.sql2mongo.query DEBUG Result: (1, 'admin', 'logentry')
+17:58:16,942 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('admin', 'logentry')
+17:58:16,944 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'admin'}}, {'model': {'$eq': 'logentry'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:17,112 djongo.sql2mongo.query DEBUG Result: (1, 'admin', 'logentry')
+17:58:17,115 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (1,)
+17:58:17,291 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [1]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:17,291 djongo.sql2mongo.query DEBUG Result: (1, 'add_logentry')
+17:58:17,291 djongo.sql2mongo.query DEBUG Result: (1, 'change_logentry')
+17:58:17,291 djongo.sql2mongo.query DEBUG Result: (1, 'delete_logentry')
+17:58:17,291 djongo.sql2mongo.query DEBUG Result: (1, 'view_logentry')
+17:58:17,292 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('admin',)
+17:58:17,293 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'admin'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:17,461 djongo.sql2mongo.query DEBUG Result: (1, 'admin', 'logentry')
+17:58:17,462 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('auth',)
+17:58:17,465 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'auth'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:17,633 djongo.sql2mongo.query DEBUG Result: (3, 'auth', 'group')
+17:58:17,634 djongo.sql2mongo.query DEBUG Result: (2, 'auth', 'permission')
+17:58:17,634 djongo.sql2mongo.query DEBUG Result: (4, 'auth', 'user')
+17:58:17,634 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('auth', 'permission')
+17:58:17,637 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'auth'}}, {'model': {'$eq': 'permission'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:17,807 djongo.sql2mongo.query DEBUG Result: (2, 'auth', 'permission')
+17:58:17,808 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('auth', 'group')
+17:58:17,810 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'auth'}}, {'model': {'$eq': 'group'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:17,980 djongo.sql2mongo.query DEBUG Result: (3, 'auth', 'group')
+17:58:17,982 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('auth', 'user')
+17:58:17,986 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'auth'}}, {'model': {'$eq': 'user'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:18,158 djongo.sql2mongo.query DEBUG Result: (4, 'auth', 'user')
+17:58:18,160 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s, %(1)s, %(2)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (2, 3, 4)
+17:58:18,332 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [2, 3, 4]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:18,332 djongo.sql2mongo.query DEBUG Result: (3, 'add_group')
+17:58:18,332 djongo.sql2mongo.query DEBUG Result: (3, 'change_group')
+17:58:18,332 djongo.sql2mongo.query DEBUG Result: (3, 'delete_group')
+17:58:18,332 djongo.sql2mongo.query DEBUG Result: (3, 'view_group')
+17:58:18,333 djongo.sql2mongo.query DEBUG Result: (2, 'add_permission')
+17:58:18,333 djongo.sql2mongo.query DEBUG Result: (2, 'change_permission')
+17:58:18,333 djongo.sql2mongo.query DEBUG Result: (2, 'delete_permission')
+17:58:18,333 djongo.sql2mongo.query DEBUG Result: (2, 'view_permission')
+17:58:18,333 djongo.sql2mongo.query DEBUG Result: (4, 'add_user')
+17:58:18,333 djongo.sql2mongo.query DEBUG Result: (4, 'change_user')
+17:58:18,333 djongo.sql2mongo.query DEBUG Result: (4, 'delete_user')
+17:58:18,333 djongo.sql2mongo.query DEBUG Result: (4, 'view_user')
+17:58:18,334 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('auth',)
+17:58:18,336 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'auth'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:18,505 djongo.sql2mongo.query DEBUG Result: (3, 'auth', 'group')
+17:58:18,506 djongo.sql2mongo.query DEBUG Result: (2, 'auth', 'permission')
+17:58:18,506 djongo.sql2mongo.query DEBUG Result: (4, 'auth', 'user')
+17:58:18,506 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('contenttypes',)
+17:58:18,508 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'contenttypes'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:18,677 djongo.sql2mongo.query DEBUG Result: (5, 'contenttypes', 'contenttype')
+17:58:18,677 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('contenttypes', 'contenttype')
+17:58:18,682 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'contenttypes'}}, {'model': {'$eq': 'contenttype'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:18,857 djongo.sql2mongo.query DEBUG Result: (5, 'contenttypes', 'contenttype')
+17:58:18,858 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (5,)
+17:58:19,33 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [5]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:19,33 djongo.sql2mongo.query DEBUG Result: (5, 'add_contenttype')
+17:58:19,33 djongo.sql2mongo.query DEBUG Result: (5, 'change_contenttype')
+17:58:19,34 djongo.sql2mongo.query DEBUG Result: (5, 'delete_contenttype')
+17:58:19,34 djongo.sql2mongo.query DEBUG Result: (5, 'view_contenttype')
+17:58:19,35 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('contenttypes',)
+17:58:19,38 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'contenttypes'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:19,206 djongo.sql2mongo.query DEBUG Result: (5, 'contenttypes', 'contenttype')
+17:58:19,207 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('sessions',)
+17:58:19,210 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'sessions'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:19,382 djongo.sql2mongo.query DEBUG Result: (6, 'sessions', 'session')
+17:58:19,383 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('sessions', 'session')
+17:58:19,385 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'sessions'}}, {'model': {'$eq': 'session'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:19,552 djongo.sql2mongo.query DEBUG Result: (6, 'sessions', 'session')
+17:58:19,554 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (6,)
+17:58:19,729 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [6]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:19,730 djongo.sql2mongo.query DEBUG Result: (6, 'add_session')
+17:58:19,730 djongo.sql2mongo.query DEBUG Result: (6, 'change_session')
+17:58:19,730 djongo.sql2mongo.query DEBUG Result: (6, 'delete_session')
+17:58:19,730 djongo.sql2mongo.query DEBUG Result: (6, 'view_session')
+17:58:19,731 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('sessions',)
+17:58:19,732 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'sessions'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:19,901 djongo.sql2mongo.query DEBUG Result: (6, 'sessions', 'session')
+17:58:19,902 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('api',)
+17:58:19,905 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'api'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:20,75 djongo.sql2mongo.query DEBUG Result: (7, 'api', 'artist')
+17:58:20,75 djongo.sql2mongo.query DEBUG Result: (8, 'api', 'artistpopularities')
+17:58:20,76 djongo.sql2mongo.query DEBUG Result: (16, 'api', 'artistpopularity')
+17:58:20,76 djongo.sql2mongo.query DEBUG Result: (9, 'api', 'playlist')
+17:58:20,76 djongo.sql2mongo.query DEBUG Result: (10, 'api', 'track')
+17:58:20,76 djongo.sql2mongo.query DEBUG Result: (17, 'api', 'trackrecord')
+17:58:20,76 djongo.sql2mongo.query DEBUG Result: (11, 'api', 'trackrecords')
+17:58:20,77 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'artist')
+17:58:20,79 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'artist'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:20,248 djongo.sql2mongo.query DEBUG Result: (7, 'api', 'artist')
+17:58:20,249 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'artistpopularity')
+17:58:20,252 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'artistpopularity'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:20,420 djongo.sql2mongo.query DEBUG Result: (16, 'api', 'artistpopularity')
+17:58:20,421 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'playlist')
+17:58:20,424 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'playlist'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:20,595 djongo.sql2mongo.query DEBUG Result: (9, 'api', 'playlist')
+17:58:20,596 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'track')
+17:58:20,598 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'track'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:20,767 djongo.sql2mongo.query DEBUG Result: (10, 'api', 'track')
+17:58:20,768 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'trackrecord')
+17:58:20,770 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'trackrecord'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:20,938 djongo.sql2mongo.query DEBUG Result: (17, 'api', 'trackrecord')
+17:58:20,939 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s, %(1)s, %(2)s, %(3)s, %(4)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (7, 9, 10, 16, 17)
+17:58:21,113 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [7, 9, 10, 16, 17]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:21,114 djongo.sql2mongo.query DEBUG Result: (7, 'add_artist')
+17:58:21,114 djongo.sql2mongo.query DEBUG Result: (7, 'change_artist')
+17:58:21,114 djongo.sql2mongo.query DEBUG Result: (7, 'delete_artist')
+17:58:21,114 djongo.sql2mongo.query DEBUG Result: (7, 'view_artist')
+17:58:21,114 djongo.sql2mongo.query DEBUG Result: (16, 'add_artistpopularity')
+17:58:21,114 djongo.sql2mongo.query DEBUG Result: (16, 'change_artistpopularity')
+17:58:21,114 djongo.sql2mongo.query DEBUG Result: (16, 'delete_artistpopularity')
+17:58:21,115 djongo.sql2mongo.query DEBUG Result: (16, 'view_artistpopularity')
+17:58:21,115 djongo.sql2mongo.query DEBUG Result: (9, 'add_playlist')
+17:58:21,115 djongo.sql2mongo.query DEBUG Result: (9, 'change_playlist')
+17:58:21,115 djongo.sql2mongo.query DEBUG Result: (9, 'delete_playlist')
+17:58:21,115 djongo.sql2mongo.query DEBUG Result: (9, 'view_playlist')
+17:58:21,115 djongo.sql2mongo.query DEBUG Result: (10, 'add_track')
+17:58:21,115 djongo.sql2mongo.query DEBUG Result: (10, 'change_track')
+17:58:21,116 djongo.sql2mongo.query DEBUG Result: (10, 'delete_track')
+17:58:21,116 djongo.sql2mongo.query DEBUG Result: (10, 'view_track')
+17:58:21,116 djongo.sql2mongo.query DEBUG Result: (17, 'add_trackrecord')
+17:58:21,116 djongo.sql2mongo.query DEBUG Result: (17, 'change_trackrecord')
+17:58:21,116 djongo.sql2mongo.query DEBUG Result: (17, 'delete_trackrecord')
+17:58:21,116 djongo.sql2mongo.query DEBUG Result: (17, 'view_trackrecord')
+17:58:21,117 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('api',)
+17:58:21,120 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'api'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:21,291 djongo.sql2mongo.query DEBUG Result: (7, 'api', 'artist')
+17:58:21,292 djongo.sql2mongo.query DEBUG Result: (8, 'api', 'artistpopularities')
+17:58:21,292 djongo.sql2mongo.query DEBUG Result: (16, 'api', 'artistpopularity')
+17:58:21,292 djongo.sql2mongo.query DEBUG Result: (9, 'api', 'playlist')
+17:58:21,293 djongo.sql2mongo.query DEBUG Result: (10, 'api', 'track')
+17:58:21,293 djongo.sql2mongo.query DEBUG Result: (17, 'api', 'trackrecord')
+17:58:21,293 djongo.sql2mongo.query DEBUG Result: (11, 'api', 'trackrecords')
+17:58:21,294 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('spotify',)
+17:58:21,296 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'spotify'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:21,466 djongo.sql2mongo.query DEBUG Result: (12, 'spotify', 'job')
+17:58:21,466 djongo.sql2mongo.query DEBUG Result: (13, 'spotify', 'spotifytoken')
+17:58:21,466 djongo.sql2mongo.query DEBUG Result: (14, 'spotify', 'user')
+17:58:21,466 djongo.sql2mongo.query DEBUG Result: (15, 'spotify', 'userprofile')
+17:58:21,467 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('spotify', 'job')
+17:58:21,471 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'spotify'}}, {'model': {'$eq': 'job'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:21,641 djongo.sql2mongo.query DEBUG Result: (12, 'spotify', 'job')
+17:58:21,643 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('spotify', 'user')
+17:58:21,646 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'spotify'}}, {'model': {'$eq': 'user'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:21,815 djongo.sql2mongo.query DEBUG Result: (14, 'spotify', 'user')
+17:58:21,817 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('spotify', 'userprofile')
+17:58:21,822 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'spotify'}}, {'model': {'$eq': 'userprofile'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:21,994 djongo.sql2mongo.query DEBUG Result: (15, 'spotify', 'userprofile')
+17:58:21,995 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('spotify', 'spotifytoken')
+17:58:21,999 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'spotify'}}, {'model': {'$eq': 'spotifytoken'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:22,169 djongo.sql2mongo.query DEBUG Result: (13, 'spotify', 'spotifytoken')
+17:58:22,171 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s, %(1)s, %(2)s, %(3)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (12, 13, 14, 15)
+17:58:22,354 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [12, 13, 14, 15]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:22,355 djongo.sql2mongo.query DEBUG Result: (12, 'add_job')
+17:58:22,355 djongo.sql2mongo.query DEBUG Result: (12, 'change_job')
+17:58:22,355 djongo.sql2mongo.query DEBUG Result: (12, 'delete_job')
+17:58:22,356 djongo.sql2mongo.query DEBUG Result: (12, 'view_job')
+17:58:22,356 djongo.sql2mongo.query DEBUG Result: (13, 'add_spotifytoken')
+17:58:22,356 djongo.sql2mongo.query DEBUG Result: (13, 'change_spotifytoken')
+17:58:22,356 djongo.sql2mongo.query DEBUG Result: (13, 'delete_spotifytoken')
+17:58:22,357 djongo.sql2mongo.query DEBUG Result: (13, 'view_spotifytoken')
+17:58:22,357 djongo.sql2mongo.query DEBUG Result: (14, 'add_user')
+17:58:22,357 djongo.sql2mongo.query DEBUG Result: (14, 'change_user')
+17:58:22,357 djongo.sql2mongo.query DEBUG Result: (14, 'delete_user')
+17:58:22,358 djongo.sql2mongo.query DEBUG Result: (14, 'view_user')
+17:58:22,358 djongo.sql2mongo.query DEBUG Result: (15, 'add_userprofile')
+17:58:22,359 djongo.sql2mongo.query DEBUG Result: (15, 'change_userprofile')
+17:58:22,359 djongo.sql2mongo.query DEBUG Result: (15, 'delete_userprofile')
+17:58:22,360 djongo.sql2mongo.query DEBUG Result: (15, 'view_userprofile')
+17:58:22,361 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('spotify',)
+17:58:22,364 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'spotify'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:22,534 djongo.sql2mongo.query DEBUG Result: (12, 'spotify', 'job')
+17:58:22,534 djongo.sql2mongo.query DEBUG Result: (13, 'spotify', 'spotifytoken')
+17:58:22,534 djongo.sql2mongo.query DEBUG Result: (14, 'spotify', 'user')
+17:58:22,534 djongo.sql2mongo.query DEBUG Result: (15, 'spotify', 'userprofile')
+17:58:22,535 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('django_crontab',)
+17:58:22,538 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'django_crontab'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:22,709 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('django_crontab',)
+17:58:22,712 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'django_crontab'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:22,877 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('django_extensions',)
+17:58:22,880 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'django_extensions'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:23,52 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('django_extensions',)
+17:58:23,55 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'django_extensions'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:23,399 djongo.base DEBUG MongoClient connection closed
+17:58:41,416 asyncio DEBUG Using proactor: IocpProactor
+17:58:41,417 djongo.database DEBUG New MongoClient connection
+17:58:41,476 djongo.base DEBUG New Database connection
+17:58:43,165 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:58:43,169 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:58:43,355 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:58:43,355 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:58:43,356 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:58:43,356 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:58:43,357 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:58:43,357 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:58:43,357 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:58:43,358 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:58:43,358 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:58:43,358 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:58:43,358 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:58:43,359 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:58:43,359 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:58:43,360 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:58:43,360 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:58:43,360 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:58:43,360 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:58:43,360 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:58:43,360 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:58:43,361 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:58:43,361 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:58:43,361 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:58:43,361 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:58:43,361 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:58:43,550 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:58:43,552 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:58:43,738 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:58:43,739 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:58:43,739 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:58:43,739 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:58:43,740 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:58:43,740 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:58:43,740 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:58:43,741 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:58:43,741 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:58:43,742 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:58:43,742 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:58:43,742 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:58:43,742 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:58:43,742 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:58:43,743 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:58:43,743 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:58:43,743 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:58:43,743 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:58:43,743 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:58:43,744 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:58:43,744 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:58:43,744 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:58:43,744 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:58:43,744 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:58:44,166 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+17:58:44,168 djongo.sql2mongo.query DEBUG Find query: {'projection': ['id', 'app', 'name', 'applied']}
+17:58:44,355 djongo.sql2mongo.query DEBUG Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 37, 612000))
+17:58:44,355 djongo.sql2mongo.query DEBUG Result: (2, 'auth', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 47, 6000))
+17:58:44,356 djongo.sql2mongo.query DEBUG Result: (3, 'admin', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 49, 37000))
+17:58:44,356 djongo.sql2mongo.query DEBUG Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2021, 11, 26, 0, 10, 49, 680000))
+17:58:44,357 djongo.sql2mongo.query DEBUG Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2021, 11, 26, 0, 10, 50, 335000))
+17:58:44,357 djongo.sql2mongo.query DEBUG Result: (6, 'api', '0001_initial', datetime.datetime(2021, 11, 26, 0, 10, 55, 486000))
+17:58:44,357 djongo.sql2mongo.query DEBUG Result: (7, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2021, 11, 26, 0, 10, 56, 591000))
+17:58:44,358 djongo.sql2mongo.query DEBUG Result: (8, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2021, 11, 26, 0, 10, 57, 291000))
+17:58:44,358 djongo.sql2mongo.query DEBUG Result: (9, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2021, 11, 26, 0, 10, 58, 45000))
+17:58:44,358 djongo.sql2mongo.query DEBUG Result: (10, 'auth', '0004_alter_user_username_opts', datetime.datetime(2021, 11, 26, 0, 10, 58, 738000))
+17:58:44,358 djongo.sql2mongo.query DEBUG Result: (11, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2021, 11, 26, 0, 10, 59, 392000))
+17:58:44,358 djongo.sql2mongo.query DEBUG Result: (12, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2021, 11, 26, 0, 11, 0, 41000))
+17:58:44,359 djongo.sql2mongo.query DEBUG Result: (13, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2021, 11, 26, 0, 11, 0, 700000))
+17:58:44,359 djongo.sql2mongo.query DEBUG Result: (14, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2021, 11, 26, 0, 11, 1, 361000))
+17:58:44,359 djongo.sql2mongo.query DEBUG Result: (15, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 36000))
+17:58:44,359 djongo.sql2mongo.query DEBUG Result: (16, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 2, 708000))
+17:58:44,359 djongo.sql2mongo.query DEBUG Result: (17, 'auth', '0011_update_proxy_permissions', datetime.datetime(2021, 11, 26, 0, 11, 3, 365000))
+17:58:44,360 djongo.sql2mongo.query DEBUG Result: (18, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2021, 11, 26, 0, 11, 4, 53000))
+17:58:44,360 djongo.sql2mongo.query DEBUG Result: (19, 'sessions', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 5, 851000))
+17:58:44,360 djongo.sql2mongo.query DEBUG Result: (20, 'spotify', '0001_initial', datetime.datetime(2021, 11, 26, 0, 11, 7, 385000))
+17:58:44,360 djongo.sql2mongo.query DEBUG Result: (21, 'spotify', '0002_auto_20211125_2110', datetime.datetime(2021, 11, 26, 0, 11, 12, 859000))
+17:58:44,361 djongo.sql2mongo.query DEBUG Result: (22, 'spotify', '0003_job_start_date', datetime.datetime(2021, 11, 26, 14, 49, 48, 737000))
+17:58:44,361 djongo.sql2mongo.query DEBUG Result: (23, 'api', '0002_auto_20211130_1133', datetime.datetime(2021, 11, 30, 14, 33, 35, 569000))
+17:58:44,361 djongo.sql2mongo.query DEBUG Result: (24, 'spotify', '0004_alter_userprofile_last_login', datetime.datetime(2021, 11, 30, 14, 33, 36, 424000))
+17:58:44,363 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('admin',)
+17:58:44,367 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'admin'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:44,554 djongo.sql2mongo.query DEBUG Result: (1, 'admin', 'logentry')
+17:58:44,556 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('admin', 'logentry')
+17:58:44,562 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'admin'}}, {'model': {'$eq': 'logentry'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:44,747 djongo.sql2mongo.query DEBUG Result: (1, 'admin', 'logentry')
+17:58:44,752 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (1,)
+17:58:44,947 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [1]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:44,947 djongo.sql2mongo.query DEBUG Result: (1, 'add_logentry')
+17:58:44,947 djongo.sql2mongo.query DEBUG Result: (1, 'change_logentry')
+17:58:44,947 djongo.sql2mongo.query DEBUG Result: (1, 'delete_logentry')
+17:58:44,948 djongo.sql2mongo.query DEBUG Result: (1, 'view_logentry')
+17:58:44,949 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('admin',)
+17:58:44,951 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'admin'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:45,136 djongo.sql2mongo.query DEBUG Result: (1, 'admin', 'logentry')
+17:58:45,137 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('auth',)
+17:58:45,141 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'auth'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:45,325 djongo.sql2mongo.query DEBUG Result: (3, 'auth', 'group')
+17:58:45,325 djongo.sql2mongo.query DEBUG Result: (2, 'auth', 'permission')
+17:58:45,326 djongo.sql2mongo.query DEBUG Result: (4, 'auth', 'user')
+17:58:45,327 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('auth', 'permission')
+17:58:45,331 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'auth'}}, {'model': {'$eq': 'permission'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:45,516 djongo.sql2mongo.query DEBUG Result: (2, 'auth', 'permission')
+17:58:45,519 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('auth', 'group')
+17:58:45,526 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'auth'}}, {'model': {'$eq': 'group'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:45,712 djongo.sql2mongo.query DEBUG Result: (3, 'auth', 'group')
+17:58:45,715 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('auth', 'user')
+17:58:45,722 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'auth'}}, {'model': {'$eq': 'user'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:45,908 djongo.sql2mongo.query DEBUG Result: (4, 'auth', 'user')
+17:58:45,910 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s, %(1)s, %(2)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (2, 3, 4)
+17:58:46,102 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [2, 3, 4]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (3, 'add_group')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (3, 'change_group')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (3, 'delete_group')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (3, 'view_group')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (2, 'add_permission')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (2, 'change_permission')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (2, 'delete_permission')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (2, 'view_permission')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (4, 'add_user')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (4, 'change_user')
+17:58:46,102 djongo.sql2mongo.query DEBUG Result: (4, 'delete_user')
+17:58:46,103 djongo.sql2mongo.query DEBUG Result: (4, 'view_user')
+17:58:46,103 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('auth',)
+17:58:46,105 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'auth'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:46,294 djongo.sql2mongo.query DEBUG Result: (3, 'auth', 'group')
+17:58:46,294 djongo.sql2mongo.query DEBUG Result: (2, 'auth', 'permission')
+17:58:46,294 djongo.sql2mongo.query DEBUG Result: (4, 'auth', 'user')
+17:58:46,295 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('contenttypes',)
+17:58:46,296 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'contenttypes'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:46,481 djongo.sql2mongo.query DEBUG Result: (5, 'contenttypes', 'contenttype')
+17:58:46,482 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('contenttypes', 'contenttype')
+17:58:46,484 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'contenttypes'}}, {'model': {'$eq': 'contenttype'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:46,670 djongo.sql2mongo.query DEBUG Result: (5, 'contenttypes', 'contenttype')
+17:58:46,672 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (5,)
+17:58:46,860 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [5]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:46,860 djongo.sql2mongo.query DEBUG Result: (5, 'add_contenttype')
+17:58:46,861 djongo.sql2mongo.query DEBUG Result: (5, 'change_contenttype')
+17:58:46,861 djongo.sql2mongo.query DEBUG Result: (5, 'delete_contenttype')
+17:58:46,861 djongo.sql2mongo.query DEBUG Result: (5, 'view_contenttype')
+17:58:46,862 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('contenttypes',)
+17:58:46,863 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'contenttypes'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:47,48 djongo.sql2mongo.query DEBUG Result: (5, 'contenttypes', 'contenttype')
+17:58:47,49 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('sessions',)
+17:58:47,51 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'sessions'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:47,235 djongo.sql2mongo.query DEBUG Result: (6, 'sessions', 'session')
+17:58:47,236 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('sessions', 'session')
+17:58:47,241 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'sessions'}}, {'model': {'$eq': 'session'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:47,429 djongo.sql2mongo.query DEBUG Result: (6, 'sessions', 'session')
+17:58:47,430 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (6,)
+17:58:47,624 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [6]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:47,624 djongo.sql2mongo.query DEBUG Result: (6, 'add_session')
+17:58:47,625 djongo.sql2mongo.query DEBUG Result: (6, 'change_session')
+17:58:47,625 djongo.sql2mongo.query DEBUG Result: (6, 'delete_session')
+17:58:47,626 djongo.sql2mongo.query DEBUG Result: (6, 'view_session')
+17:58:47,627 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('sessions',)
+17:58:47,630 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'sessions'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:47,816 djongo.sql2mongo.query DEBUG Result: (6, 'sessions', 'session')
+17:58:47,817 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('api',)
+17:58:47,819 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'api'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:48,4 djongo.sql2mongo.query DEBUG Result: (7, 'api', 'artist')
+17:58:48,4 djongo.sql2mongo.query DEBUG Result: (8, 'api', 'artistpopularities')
+17:58:48,5 djongo.sql2mongo.query DEBUG Result: (16, 'api', 'artistpopularity')
+17:58:48,5 djongo.sql2mongo.query DEBUG Result: (9, 'api', 'playlist')
+17:58:48,5 djongo.sql2mongo.query DEBUG Result: (10, 'api', 'track')
+17:58:48,5 djongo.sql2mongo.query DEBUG Result: (17, 'api', 'trackrecord')
+17:58:48,5 djongo.sql2mongo.query DEBUG Result: (11, 'api', 'trackrecords')
+17:58:48,6 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'artist')
+17:58:48,10 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'artist'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:48,195 djongo.sql2mongo.query DEBUG Result: (7, 'api', 'artist')
+17:58:48,196 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'artistpopularity')
+17:58:48,198 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'artistpopularity'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:48,386 djongo.sql2mongo.query DEBUG Result: (16, 'api', 'artistpopularity')
+17:58:48,388 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'playlist')
+17:58:48,394 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'playlist'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:48,579 djongo.sql2mongo.query DEBUG Result: (9, 'api', 'playlist')
+17:58:48,580 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'track')
+17:58:48,584 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'track'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:48,768 djongo.sql2mongo.query DEBUG Result: (10, 'api', 'track')
+17:58:48,769 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('api', 'trackrecord')
+17:58:48,773 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'api'}}, {'model': {'$eq': 'trackrecord'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:48,958 djongo.sql2mongo.query DEBUG Result: (17, 'api', 'trackrecord')
+17:58:48,959 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s, %(1)s, %(2)s, %(3)s, %(4)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (7, 9, 10, 16, 17)
+17:58:49,153 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [7, 9, 10, 16, 17]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:49,153 djongo.sql2mongo.query DEBUG Result: (7, 'add_artist')
+17:58:49,154 djongo.sql2mongo.query DEBUG Result: (7, 'change_artist')
+17:58:49,154 djongo.sql2mongo.query DEBUG Result: (7, 'delete_artist')
+17:58:49,154 djongo.sql2mongo.query DEBUG Result: (7, 'view_artist')
+17:58:49,154 djongo.sql2mongo.query DEBUG Result: (16, 'add_artistpopularity')
+17:58:49,154 djongo.sql2mongo.query DEBUG Result: (16, 'change_artistpopularity')
+17:58:49,154 djongo.sql2mongo.query DEBUG Result: (16, 'delete_artistpopularity')
+17:58:49,154 djongo.sql2mongo.query DEBUG Result: (16, 'view_artistpopularity')
+17:58:49,155 djongo.sql2mongo.query DEBUG Result: (9, 'add_playlist')
+17:58:49,155 djongo.sql2mongo.query DEBUG Result: (9, 'change_playlist')
+17:58:49,155 djongo.sql2mongo.query DEBUG Result: (9, 'delete_playlist')
+17:58:49,155 djongo.sql2mongo.query DEBUG Result: (9, 'view_playlist')
+17:58:49,155 djongo.sql2mongo.query DEBUG Result: (10, 'add_track')
+17:58:49,155 djongo.sql2mongo.query DEBUG Result: (10, 'change_track')
+17:58:49,156 djongo.sql2mongo.query DEBUG Result: (10, 'delete_track')
+17:58:49,156 djongo.sql2mongo.query DEBUG Result: (10, 'view_track')
+17:58:49,156 djongo.sql2mongo.query DEBUG Result: (17, 'add_trackrecord')
+17:58:49,156 djongo.sql2mongo.query DEBUG Result: (17, 'change_trackrecord')
+17:58:49,156 djongo.sql2mongo.query DEBUG Result: (17, 'delete_trackrecord')
+17:58:49,156 djongo.sql2mongo.query DEBUG Result: (17, 'view_trackrecord')
+17:58:49,158 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('api',)
+17:58:49,160 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'api'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:49,346 djongo.sql2mongo.query DEBUG Result: (7, 'api', 'artist')
+17:58:49,347 djongo.sql2mongo.query DEBUG Result: (8, 'api', 'artistpopularities')
+17:58:49,347 djongo.sql2mongo.query DEBUG Result: (16, 'api', 'artistpopularity')
+17:58:49,347 djongo.sql2mongo.query DEBUG Result: (9, 'api', 'playlist')
+17:58:49,347 djongo.sql2mongo.query DEBUG Result: (10, 'api', 'track')
+17:58:49,347 djongo.sql2mongo.query DEBUG Result: (17, 'api', 'trackrecord')
+17:58:49,347 djongo.sql2mongo.query DEBUG Result: (11, 'api', 'trackrecords')
+17:58:49,348 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('spotify',)
+17:58:49,350 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'spotify'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:49,534 djongo.sql2mongo.query DEBUG Result: (12, 'spotify', 'job')
+17:58:49,535 djongo.sql2mongo.query DEBUG Result: (13, 'spotify', 'spotifytoken')
+17:58:49,535 djongo.sql2mongo.query DEBUG Result: (14, 'spotify', 'user')
+17:58:49,535 djongo.sql2mongo.query DEBUG Result: (15, 'spotify', 'userprofile')
+17:58:49,536 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('spotify', 'job')
+17:58:49,541 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'spotify'}}, {'model': {'$eq': 'job'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:49,726 djongo.sql2mongo.query DEBUG Result: (12, 'spotify', 'job')
+17:58:49,728 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('spotify', 'user')
+17:58:49,730 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'spotify'}}, {'model': {'$eq': 'user'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:49,916 djongo.sql2mongo.query DEBUG Result: (14, 'spotify', 'user')
+17:58:49,917 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('spotify', 'userprofile')
+17:58:49,920 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'spotify'}}, {'model': {'$eq': 'userprofile'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:50,106 djongo.sql2mongo.query DEBUG Result: (15, 'spotify', 'userprofile')
+17:58:50,108 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = %(0)s AND "django_content_type"."model" = %(1)s) LIMIT 21
+params: ('spotify', 'spotifytoken')
+17:58:50,110 djongo.sql2mongo.query DEBUG Find query: {'filter': {'$and': [{'app_label': {'$eq': 'spotify'}}, {'model': {'$eq': 'spotifytoken'}}]}, 'projection': ['id', 'app_label', 'model'], 'limit': 21}
+17:58:50,296 djongo.sql2mongo.query DEBUG Result: (13, 'spotify', 'spotifytoken')
+17:58:50,297 djongo.sql2mongo.query DEBUG sql_command: SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (%(0)s, %(1)s, %(2)s, %(3)s) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC
+params: (12, 13, 14, 15)
+17:58:50,492 djongo.sql2mongo.query DEBUG Aggregation query: [{'$match': {'content_type_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'django_content_type', 'localField': 'content_type_id', 'foreignField': 'id', 'as': 'django_content_type'}}, {'$unwind': '$django_content_type'}, {'$match': {'content_type_id': {'$in': [12, 13, 14, 15]}}}, {'$sort': OrderedDict([('django_content_type.app_label', 1), ('django_content_type.model', 1), ('codename', 1)])}, {'$project': {'content_type_id': True, 'codename': True}}]
+17:58:50,492 djongo.sql2mongo.query DEBUG Result: (12, 'add_job')
+17:58:50,493 djongo.sql2mongo.query DEBUG Result: (12, 'change_job')
+17:58:50,493 djongo.sql2mongo.query DEBUG Result: (12, 'delete_job')
+17:58:50,493 djongo.sql2mongo.query DEBUG Result: (12, 'view_job')
+17:58:50,493 djongo.sql2mongo.query DEBUG Result: (13, 'add_spotifytoken')
+17:58:50,493 djongo.sql2mongo.query DEBUG Result: (13, 'change_spotifytoken')
+17:58:50,493 djongo.sql2mongo.query DEBUG Result: (13, 'delete_spotifytoken')
+17:58:50,494 djongo.sql2mongo.query DEBUG Result: (13, 'view_spotifytoken')
+17:58:50,494 djongo.sql2mongo.query DEBUG Result: (14, 'add_user')
+17:58:50,494 djongo.sql2mongo.query DEBUG Result: (14, 'change_user')
+17:58:50,494 djongo.sql2mongo.query DEBUG Result: (14, 'delete_user')
+17:58:50,494 djongo.sql2mongo.query DEBUG Result: (14, 'view_user')
+17:58:50,494 djongo.sql2mongo.query DEBUG Result: (15, 'add_userprofile')
+17:58:50,494 djongo.sql2mongo.query DEBUG Result: (15, 'change_userprofile')
+17:58:50,494 djongo.sql2mongo.query DEBUG Result: (15, 'delete_userprofile')
+17:58:50,494 djongo.sql2mongo.query DEBUG Result: (15, 'view_userprofile')
+17:58:50,495 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('spotify',)
+17:58:50,496 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'spotify'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:50,682 djongo.sql2mongo.query DEBUG Result: (12, 'spotify', 'job')
+17:58:50,682 djongo.sql2mongo.query DEBUG Result: (13, 'spotify', 'spotifytoken')
+17:58:50,683 djongo.sql2mongo.query DEBUG Result: (14, 'spotify', 'user')
+17:58:50,683 djongo.sql2mongo.query DEBUG Result: (15, 'spotify', 'userprofile')
+17:58:50,684 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('django_crontab',)
+17:58:50,685 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'django_crontab'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:50,873 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('django_crontab',)
+17:58:50,877 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'django_crontab'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:51,63 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('django_extensions',)
+17:58:51,64 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'django_extensions'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:51,247 djongo.sql2mongo.query DEBUG sql_command: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = %(0)s
+params: ('django_extensions',)
+17:58:51,250 djongo.sql2mongo.query DEBUG Find query: {'filter': {'app_label': {'$eq': 'django_extensions'}}, 'projection': ['id', 'app_label', 'model']}
+17:58:51,628 djongo.base DEBUG MongoClient connection closed

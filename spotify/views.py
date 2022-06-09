@@ -3,20 +3,28 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
 from .interaction import *
-from .models import SpotifyUser
+from .models import User, SpotifyToken, UserProfile
 from .auth import get_auth_url, request_spotify_token, user_is_authenticated
-from api.models import Room
+
+from .cron import get_data
 
 
 class AuthURL(APIView):
 
-    def get(self, request, format=None):
+    def get(self, request):
         return Response({'url': get_auth_url()}, status=status.HTTP_200_OK)
+
+
+class GetData(APIView):
+
+    def get(self, request):
+        get_data()
+        return Response('Process finished OK', status=status.HTTP_200_OK)
 
 
 class SpotifyCallback(APIView):
 
-    def get(self, request, format=None):
+    def get(self, request):
         code = request.GET.get('code')
         error = request.GET.get('error')
         if error or not code:
@@ -28,37 +36,68 @@ class SpotifyCallback(APIView):
 
         if not request.session.exists(request.session.session_key):
             request.session.create()
-        token_data['session_id'] = request.session.session_key
+        session_id = request.session.session_key
 
-        # SpotifyUser.create_or_update_user(token_data)
-        # @staticmethod
-        # def create_or_update_user(token_data):
-        # Only gets called after SpotifyCallback so access token is always valid
         user_data = get_spotify_user_data(access_token=token_data.get('access_token'))
-        user = SpotifyUser.objects.filter(user_id=user_data.get('user_id'))
-        if user.exists():
-            user.update(**token_data)
-        else:
-            user = SpotifyUser(**user_data, **token_data)
-            user.save()
+        User.create_or_update_user(token_data=token_data, user_data=user_data, session_id=session_id)
 
         return redirect('frontend:')
 
 
 class IsAuthenticated(APIView):
 
-    def get(self, request, format=None):
+    def get(self, request):
         is_authenticated, _ = user_is_authenticated(request.session.session_key)
         return Response({'is_authenticated': is_authenticated}, status=status.HTTP_200_OK)
 
 
 class Logout(APIView):
 
-    def post(self, request, format=None):
+    def post(self, request):
         print('Entered logout view')
-        user = SpotifyUser.objects.get(session_id=request.session.session_key)
+        user = User.objects.get(session_id=request.session.session_key)
         user.logout()
         return Response({}, status=status.HTTP_200_OK)
+
+
+# class PauseSong(APIView):
+#     def put(self, response, format=None):
+#         room_code = self.request.session.get('room_code')
+#         room = Room.objects.filter(code=room_code)[0]
+#         if self.request.session.session_key == room.host or room.guest_can_pause:
+#             pause_song(room.host)
+#             return Response({}, status=status.HTTP_204_NO_CONTENT)
+#
+#         return Response({}, status=status.HTTP_403_FORBIDDEN)
+#
+#
+# class PlaySong(APIView):
+#     def put(self, response, format=None):
+#         room_code = self.request.session.get('room_code')
+#         room = Room.objects.filter(code=room_code)[0]
+#         if self.request.session.session_key == room.host or room.guest_can_pause:
+#             play_song(room.host)
+#             return Response({}, status=status.HTTP_204_NO_CONTENT)
+#
+#         return Response({}, status=status.HTTP_403_FORBIDDEN)
+#
+#
+# class SkipSong(APIView):
+#     def post(self, request, format=None):
+#         room_code = self.request.session.get('room_code')
+#         room = Room.objects.filter(code=room_code)[0]
+#         votes = Vote.objects.filter(room=room, song_id=room.current_song)
+#         votes_needed = room.votes_to_skip
+#
+#         if self.request.session.session_key == room.host or len(votes) + 1 >= votes_needed:
+#             votes.delete()
+#             skip_song(room.host)
+#         else:
+#             vote = Vote(user=self.request.session.session_key,
+#                         room=room, song_id=room.current_song)
+#             vote.save()
+#
+#         return Response({}, status.HTTP_204_NO_CONTENT)
 
 
 # class CurrentSong(APIView):
@@ -117,41 +156,3 @@ class Logout(APIView):
 #             votes = Vote.objects.filter(room=room).delete()
 
 
-class PauseSong(APIView):
-    def put(self, response, format=None):
-        room_code = self.request.session.get('room_code')
-        room = Room.objects.filter(code=room_code)[0]
-        if self.request.session.session_key == room.host or room.guest_can_pause:
-            pause_song(room.host)
-            return Response({}, status=status.HTTP_204_NO_CONTENT)
-
-        return Response({}, status=status.HTTP_403_FORBIDDEN)
-
-
-class PlaySong(APIView):
-    def put(self, response, format=None):
-        room_code = self.request.session.get('room_code')
-        room = Room.objects.filter(code=room_code)[0]
-        if self.request.session.session_key == room.host or room.guest_can_pause:
-            play_song(room.host)
-            return Response({}, status=status.HTTP_204_NO_CONTENT)
-
-        return Response({}, status=status.HTTP_403_FORBIDDEN)
-
-
-class SkipSong(APIView):
-    def post(self, request, format=None):
-        room_code = self.request.session.get('room_code')
-        room = Room.objects.filter(code=room_code)[0]
-        votes = Vote.objects.filter(room=room, song_id=room.current_song)
-        votes_needed = room.votes_to_skip
-
-        if self.request.session.session_key == room.host or len(votes) + 1 >= votes_needed:
-            votes.delete()
-            skip_song(room.host)
-        else:
-            vote = Vote(user=self.request.session.session_key,
-                        room=room, song_id=room.current_song)
-            vote.save()
-
-        return Response({}, status.HTTP_204_NO_CONTENT)
