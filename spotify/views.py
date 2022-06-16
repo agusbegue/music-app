@@ -28,11 +28,11 @@ class SpotifyCallback(APIView):
         code = request.GET.get('code')
         error = request.GET.get('error')
         if error or not code:
-            redirect('frontend:')
+            return redirect('frontend:')
 
         token_data = request_spotify_token(code)
         if token_data.pop('error', False):
-            redirect('frontend:')
+            return redirect('frontend:')
 
         if not request.session.exists(request.session.session_key):
             request.session.create()
@@ -54,7 +54,7 @@ class IsAuthenticated(APIView):
 class Logout(APIView):
 
     def post(self, request):
-        print('Entered logout view')
+        # print('Entered logout view')
         user = User.objects.get(session_id=request.session.session_key)
         user.logout()
         return Response({}, status=status.HTTP_200_OK)

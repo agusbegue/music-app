@@ -1,9 +1,87 @@
+import random
+import numpy as np
+
 from django.shortcuts import render
 from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.http import JsonResponse
 
+from spotify.auth import SpotifyAuthentication, get_user_access_token, user_is_authenticated
+from spotify.interaction import (
+    get_user_top_tracks, get_user_top_artists, get_user_playlists, get_playlists_data_v2, get_tracks_audio_features
+)
+
+
+class GetTopTracksView(APIView):
+    authentication_classes = [SpotifyAuthentication]
+
+    def get(self, request, format=None):
+        access_token = get_user_access_token(session_id=request.session.session_key)
+        top_tracks = get_user_top_tracks(
+            access_token,
+            time_range=request.GET.get('time_range'),
+            num_tracks=int(request.GET.get('amount'))
+        )
+        top_tracks_str = list(map(lambda f: f['name']+' - '+', '.join(f['artists']), top_tracks))
+        return Response(top_tracks_str, status=status.HTTP_200_OK)
+
+
+class GetTopArtistsView(APIView):
+    authentication_classes = [SpotifyAuthentication]
+
+    def get(self, request, format=None):
+        access_token = get_user_access_token(session_id=request.session.session_key)
+        top_artists = get_user_top_artists(
+            access_token,
+            time_range=request.GET.get('time_range'),
+            num_artists=int(request.GET.get('amount')),
+        )
+        top_artists_str = list(map(lambda f: f['name'], top_artists))
+        return Response(top_artists_str, status=status.HTTP_200_OK)
+
+
+class GetUserPlaylists(APIView):
+    authentication_classes = [SpotifyAuthentication]
+
+    def get(self, request, format=None):
+        access_token = get_user_access_token(session_id=request.session.session_key)
+        auth, user = user_is_authenticated(session_id=request.session.session_key)
+        playlists = get_user_playlists(access_token, owner_id=user.id)
+        return Response(playlists, status=status.HTTP_200_OK)
+
+
+class GetPlaylistAnalysisBoxplot(APIView):
+    authentication_classes = [SpotifyAuthentication]
+    features = [
+        'danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
+        'valence', 'tempo'
+    ]
+
+    def get(self, request, playlist_id):
+        access_token = get_user_access_token(session_id=request.session.session_key)
+        playlist_data = get_playlists_data_v2(access_token, [playlist_id])[playlist_id]
+        tracks_features = get_tracks_audio_features(
+            access_token, random.sample(list(map(lambda f: f['track_id'], playlist_data)), 30), batch_size=30
+        )
+        popularities = {t['track_id']: t['popularity'] for t in tracks_features}
+        tracks_features = list(map(lambda f: {**f, 'popularity': popularities[f['track_id']]}, tracks_features))
+
+        tracks_features = list(map(lambda f: {}))
+        tracks_features = list(map(lambda f: {k: f[k] for k in self.features+['id', 'name']}, tracks_features))
+        return Response(tracks_features, status=status.HTTP_200_OK)
+
+    def get_boxplot_data(self, data):
+        data = np.array(data)
+        quartile1 = np.percentile(data, 25)
+        quartile3 = np.percentile(data, 75)
+        iqr = quartile3 - quartile1
+        return {
+            'whiskerLow': data[data >= quartile1 - 1.5 * iqr].min(),
+            'quartile1': quartile1,
+            'quartile2': np.median(data),
+            'quartile3': quartile3,
+            'whiskerHigh': data[data >= quartile1 + 1.5 * iqr].max()
+        }
 
 # class ArtistsView(generics.ListAPIView):
 

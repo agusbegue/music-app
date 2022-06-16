@@ -5,7 +5,7 @@ import SpotifyLoginButton from "./SpotifyLoginButton";
 import SpotifyLogo from "../../static/images/spotify-neon.jpg";
 
 
-function LandingPage() {
+function LoginPage() {
 
   function authenticateSpotify() {
     fetch("/spotify/get-auth-url")
@@ -47,4 +47,4 @@ function LandingPage() {
   )
 }
 
-export default LandingPage
+export default LoginPage

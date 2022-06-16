@@ -6,21 +6,9 @@ from datetime import timedelta
 from django.utils import timezone
 from rest_framework.authentication import BaseAuthentication
 
+from .settings import REDIRECT_URI, SCOPES
 from .models import User, SpotifyToken
 from music_app.settings import SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
-
-
-REDIRECT_URI = "http://localhost:8000/spotify/redirect"
-SCOPES = [
-    # 'user-read-playback-state',
-    # 'user-modify-playback-state',
-    # 'user-read-currently-playing',
-    'user-read-private',
-    'user-read-email',
-    'user-library-read',
-    'playlist-read-private',
-    'user-top-read'
-]
 
 
 class SpotifyAuthentication(BaseAuthentication):

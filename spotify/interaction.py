@@ -2,17 +2,16 @@ from datetime import date, timedelta
 from django.utils import timezone
 from requests import post, put, get
 
+from .settings import API_BASE_URL
 from api.models import Artist, Track
 from api.telegram import report
-
-BASE_URL = "https://api.spotify.com/v1/"
 
 
 def execute_spotify_api_request(endpoint, access_token, request_type, query_params={}, key=None):
 
     headers = {'Content-Type': 'application/json',
                'Authorization': "Bearer " + access_token}
-    url = BASE_URL + endpoint
+    url = API_BASE_URL + endpoint
 
     if request_type == 'get':
         if query_params:
@@ -26,8 +25,10 @@ def execute_spotify_api_request(endpoint, access_token, request_type, query_para
 
         response = get(url, query_params, headers=headers)
         try:
-            key = key if key else endpoint.split('/')[0]
-            return response.json()[key]
+            if key:
+                return response.json()[key]
+            else:
+                return response.json()
         except Exception as e:
             report(f'[scraper] - Error in request to spotify - {str(e)}')
             return
@@ -56,6 +57,25 @@ def get_playlists_data(access_token, playlist_ids):
     return playlists
 
 
+def get_playlists_data_v2(access_token, playlists_ids, batch_size=100):
+    playlists = {}
+    for p_id in playlists_ids:
+        playlists[p_id] = []
+        i = 0
+        total = 1
+        while i < total:
+            raw_data = execute_spotify_api_request(
+                f'playlists/{p_id}/tracks', access_token, 'get',
+                {'limit': batch_size, 'offset': i, 'fields': 'total,items(added_at,track.id)'}
+            )
+            playlists[p_id].extend(list(map(lambda f: {
+                'track_id': f['track']['id'], 'added_at': f['added_at'], 'popularity': f['track']['popularity']
+            }, raw_data['items'])))
+            total = raw_data['total']
+            i += batch_size
+    return playlists
+
+
 def get_tracks_audio_features(access_token, track_ids, batch_size=40):
     features = [
         'danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness',
@@ -75,7 +95,8 @@ def get_tracks_popularity(access_token, track_ids, batch_size=40):
     popularities = {}
     for i in range(0, len(track_ids), batch_size):
         raw_data = execute_spotify_api_request(
-            'tracks', access_token, 'get', {'ids': track_ids[i:min(i+batch_size, len(track_ids))]}
+            'tracks', access_token, 'get', {'ids': track_ids[i:min(i+batch_size, len(track_ids))]},
+            key='tracks'
         )
         popularities.update({t['id']: t['popularity'] for t in raw_data})
     return popularities
@@ -86,7 +107,8 @@ def get_artists_data(access_token, artist_ids, batch_size=20, just_popularity=Fa
     artist_data = {}
     for i in range(0, len(artist_ids), batch_size):
         raw_data = execute_spotify_api_request(
-            'artists', access_token, 'get', {'ids': artist_ids[i:min(i+batch_size, len(artist_ids))]}
+            'artists', access_token, 'get', {'ids': artist_ids[i:min(i+batch_size, len(artist_ids))]},
+            key='artists'
         )
         artist_data.update({a['id']: {f: a[f] for f in a.keys() if f in fields} for a in raw_data})
     return artist_data
@@ -97,7 +119,8 @@ def get_artists_tracks(access_token, artist_ids, only_latest=False):
     artists_tracks = {}
     for artist_id in artist_ids:
         raw_data = execute_spotify_api_request(
-            f'artists/{artist_id}/albums?limit={num_tracks}&include_groups=single,album', access_token, 'get', key='items'
+            f'artists/{artist_id}/albums?limit={num_tracks}&include_groups=single,album', access_token, 'get',
+            key='items'
         )
         raw_data = list(filter(
             lambda f: f['release_date_precision'] == 'day' and
@@ -114,7 +137,8 @@ def get_album_tracks(access_token, album_ids, batch_size=10):
     albums_tracks = []
     for i in range(0, len(album_ids), batch_size):
         raw_data = execute_spotify_api_request(
-            'albums', access_token, 'get', {'ids': album_ids[i:min(i+batch_size, len(album_ids))]}
+            'albums', access_token, 'get', {'ids': album_ids[i:min(i+batch_size, len(album_ids))]},
+            key='albums'
         )
         for album in raw_data:
             album_tracks = [dict(track, images=album['images']) for album in raw_data for track in album['tracks']['items']]
@@ -122,6 +146,53 @@ def get_album_tracks(access_token, album_ids, batch_size=10):
                 album_tracks = list(map(lambda f: dict(f, release_date=album['release_date']), album_tracks))
             albums_tracks.extend(album_tracks)
     return albums_tracks
+
+
+def get_user_playlists(access_token, owner_id=None, min_tracks=None, batch_size=50):
+    playlists = []
+    i = 0
+    total = 1
+    while i < total:
+        raw_data = execute_spotify_api_request(f'me/playlists', access_token, 'get', {'limit': batch_size, 'offset': i})
+        playlists.extend(list(map(lambda f: {
+            'name': f['name'], 'id': f['id'], 'owner_id': f['owner']['id'], 'tracks': f['tracks']['total']
+        }, raw_data['items'])))
+        total = raw_data['total']
+        i += batch_size
+    if owner_id:
+        playlists = list(filter(lambda f: f['owner_id'] == owner_id, playlists))
+    if min_tracks is not None:
+        playlists = list(filter(lambda f: f['tracks'] >= min_tracks, playlists))
+    return list(map(lambda f: {k: f[k] for k in ['name', 'id']}, playlists))
+
+
+def get_user_top_tracks(access_token, time_range, num_tracks=50, batch_size=50):
+    data = []
+    for i in range(0, num_tracks, batch_size):
+        batch_data = execute_spotify_api_request(
+            'me/top/tracks', access_token, 'get',
+            {'time_range': time_range, 'offset': i, 'limit': min(batch_size, num_tracks-i)},
+            key='items'
+        )
+        batch_data = list(map(lambda f: {
+            'name': f['name'], 'artists': list(map(lambda a: a['name'], f['artists']))
+        }, batch_data))
+        data.extend(batch_data)
+    return data
+
+
+def get_user_top_artists(access_token, time_range, num_artists=50, batch_size=50):
+    data = []
+    for i in range(0, num_artists, batch_size):
+        batch_data = execute_spotify_api_request(
+            'me/top/artists', access_token, 'get',
+            {'time_range': time_range, 'offset': i, 'limit': min(batch_size, num_artists-i)},
+            key='items'
+        )
+        batch_data = list(map(lambda f: {'name': f['name']}, batch_data))
+        data.extend(batch_data)
+    return data
+
 
 
 # def play_song(session_id):

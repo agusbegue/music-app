@@ -19,6 +19,9 @@ class User(models.Model):
             for token_obj in token_object:
                 token_obj.session_id = session_id
                 token_obj.save()
+                if token_obj.user.session_id != session_id:
+                    token_obj.user.session_id = session_id
+                    token_obj.user.save()
         else:
             user = User(id=user_data.pop('user_id'), session_id=session_id)
             user.save()

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RoomJoinPage from "./RoomJoinPage";
 import CreateRoomPage from "./CreateRoomPage";
+import Playlists from "./PlaylistsPage";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,8 +9,8 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
-import LandingPage from "./LandingPage";
-import Dashboard from "./Dashboard";
+import LoginPage from "./LoginPage";
+import ChartsPage from "./ChartsPage";
 import MyMusicPage from "./MyMusicPage";
 
 export default class HomePage extends Component {
@@ -17,7 +18,6 @@ export default class HomePage extends Component {
     super(props);
     this.state = {
       authenticated: false,
-      session_id: null,
     };
     this.checkAuthentication = this.checkAuthentication.bind(this)
   }
@@ -41,10 +41,11 @@ export default class HomePage extends Component {
         <Switch>
           <Route exact path="/" render={() => {
               return this.state.authenticated
-                ? <Dashboard />
-                : <LandingPage />}}
+                ? <ChartsPage />
+                : <LoginPage />}}
           />
-          <PrivateRoute path="/join" component={RoomJoinPage} props={this.state}/>
+          <PrivateRoute path="/playlists" component={Playlists} auth={this.state.authenticated} props={this.state}/>
+          <PrivateRoute path="/join" component={RoomJoinPage} auth={this.state.authenticated} props={this.state}/>
           <PrivateRoute path="/create" component={CreateRoomPage} props={this.state}/>
           <PrivateRoute path="/my-music" component={MyMusicPage} props={this.state}/>
           {/*<PrivateRoute*/}
@@ -59,9 +60,9 @@ export default class HomePage extends Component {
   }
 }
 
-function PrivateRoute ({'component': Component, 'authorized': authorized, props}) {
+function PrivateRoute ({'component': Component, 'auth': authorized, ...rest}) {
   return (
-    <Route {...props}
+    <Route {...rest}
       render={(props) => authorized === true
         ? <Component {...props} />
         : <Redirect to={{pathname: '/', state: {from: props.location}}} />}

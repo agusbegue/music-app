@@ -13,19 +13,26 @@ import Cookies from "js-cookie"
 import SpotifyLogoBlack from "../../static/images/spotify-logo-black.png";
 
 const useStyles = makeStyles((theme) => ({
-  titleLink: {
+  toolBarTabs: {
     flexGrow: 1,
     textAlign: "left",
+    alignItems: "center"
+  },
+  title: {
+    textAlign: "center",
+    fontSize: 36,
+    color: "black",
     justifyContent: "center",
     alignItems: "center",
     textDecoration: "none"
   },
-  title: {
+  tab: {
     textAlign: "center",
-    fontSize: 30,
+    fontSize: 18,
+    padding: "10px",
     color: "black"
   },
-  button: {
+  logoutButton: {
     alignContent: "right",
     color: "black"
   },
@@ -36,7 +43,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar() {
+  const [tab, setTab] = useState('MY CHARTS')
   const classes = useStyles();
+
 
   function userLogout() {
     const csrftoken = Cookies.get('csrftoken');
@@ -52,16 +61,25 @@ export default function Navbar() {
         }
       })
   }
+  function tabClick(event) {
+    setTab(event.target.id);
+  }
 
   return (
     <div className={classes.root}>
       <AppBar className={classes.navbar}>
         <Toolbar>
-          <a href="/" className={classes.titleLink}>
-            <img src={SpotifyLogoBlack} alt="spotify-logo" height="25" width="25" />
-            <text className={classes.title}> MusicParty</text>
-          </a>
-          <Button className={classes.button} onClick={userLogout}>Logout</Button>
+          <div className={classes.toolBarTabs}>
+            <a href="/" className={classes.title} >
+              <img src={SpotifyLogoBlack} alt="spotify-logo" height="25" width="25" />
+              <text className={classes.title}> MUSICALLY</text>
+            </a>
+            <a href='/' className={classes.tab} id="MY CHARTS">
+              <text>MY CHARTS</text></a>
+            <a href="/playlists" className={classes.tab} id="PLAYLISTS">
+              <text>PLAYLISTS</text></a>
+          </div>
+          <Button className={classes.logoutButton} onClick={userLogout}>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>

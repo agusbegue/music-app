@@ -31,3 +31,15 @@ body {
   padding: 0px;
   margin: 0px;
 }
+
+.columnn {
+  float: left;
+}
+
+.leftt {
+  width: 33%;
+}
+
+.rightt {
+  width: 67%;
+}

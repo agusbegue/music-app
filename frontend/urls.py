@@ -6,6 +6,7 @@ app_name = 'frontend'
 
 urlpatterns = [
     path('', index, name=''),
+    path('playlists', index),
     path('info', index),
     path('join', index),
     path('create', index),
