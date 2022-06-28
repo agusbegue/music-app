@@ -30,7 +30,7 @@ logger.addHandler(info_log)
 
 BATCH_SIZE = 500
 
-DEBUG_MODE = False
+DEBUG_MODE = True
 
 
 def say_hello():
@@ -39,12 +39,13 @@ def say_hello():
 
 
 def get_data():
-    logger.debug(f'Starting job in mode: DEBUG={DEBUG_MODE}')
+    job_name = 'scraping_job'
+    report(f'Stating {job_name} job with DEBUG_MODE={DEBUG_MODE}')
+    logger.debug(f'Starting {job_name} in mode: DEBUG={DEBUG_MODE}')
+
     # Check if scraping is turned on and we have access token
     access_token, job = get_token_object()
-    logger.debug('Got access token: ' + str(access_token))
     if access_token:
-
         logger.debug('Found a job and an access token')
 
         # Get info from available playlists in the database
@@ -68,7 +69,7 @@ def get_data():
             except Exception as e:
                 status = f'[scraper] - Error in inserting artists - {str(e)}'
                 report(status)
-                JobRun(job=job, status=status, debug=DEBUG_MODE).save()
+                JobRun(name=job_name, status=status, debug=DEBUG_MODE).save()
                 return
         logger.debug(f'Saved {len(new_artists_ids)} new artists in the database')
 
@@ -90,7 +91,7 @@ def get_data():
             except Exception as e:
                 status = f'[scraper] - Error in inserting artist popularities - {str(e)}'
                 report(status)
-                JobRun(job=job, status=status, debug=DEBUG_MODE)
+                JobRun(name=job_name, status=status, debug=DEBUG_MODE).save()
                 return
         logger.debug(f'Saved popularity for total of {len(artist_pop_obj)} artists')
 
@@ -131,26 +132,24 @@ def get_data():
 
         # Save new tracks in database
         new_tracks_obj = []
-        new_relevant_tracks = {}
         for track_id, track_data in new_tracks_data.items():
             relevant = track_id in rank_records
             track = Track.create_from_dict(**track_data, **{'relevant': relevant})
             new_tracks_obj.append(track)
             if relevant:
-                new_relevant_tracks[track_id] = track
-        relevant_tracks.update(new_relevant_tracks)
+                relevant_tracks[track_id] = track
         if not DEBUG_MODE:
             try:
                 Track.objects.bulk_create(new_tracks_obj, batch_size=BATCH_SIZE)
             except Exception as e:
                 status = f'[scraper] - Error in inserting tracks - {str(e)}'
                 report(status)
-                JobRun(job=job, status=status, debug=DEBUG_MODE).save()
+                JobRun(name=job_name, status=status, debug=DEBUG_MODE).save()
                 return
         logger.debug(f'Saved {len(new_tracks_obj)} tracks in database')
 
         # Update new relevant tracks in database
-        Track.objects.filter(relevant__in=[False], id__in=list(new_relevant_tracks.keys())).update(relevant=True)
+        Track.objects.filter(relevant__in=[False], id__in=list(rank_records.keys())).update(relevant=True)
 
         # Get all relevant track's popularity
         track_popularities = get_tracks_popularity(access_token, list(relevant_tracks.keys()))
@@ -169,7 +168,7 @@ def get_data():
             except Exception as e:
                 status = f'[scraper] - Error in inserting track records - {str(e)}'
                 report(status)
-                JobRun(job=job, status=status, debug=DEBUG_MODE).save()
+                JobRun(name=job_name, status=status, debug=DEBUG_MODE).save()
                 return
         logger.debug(f'Saved records for {len(track_records)} tracks')
 
@@ -185,7 +184,7 @@ def get_data():
     else:
         summary_message = ['Scraping summary: no job or token found']
 
-    JobRun(job=job, status=summary_message[0], debug=DEBUG_MODE)
+    JobRun(name=job_name, status=summary_message[0], debug=DEBUG_MODE).save()
     for line in summary_message:
         logger.info(line)
         report(line)

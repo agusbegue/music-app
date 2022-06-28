@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'music_app.wsgi.application'
 
 # Cron jobs
 CRONJOBS = [
-    ('10 15 * * *', 'spotify.cron.get_data'),
+    ('0 0 * * *', 'spotify.cron.get_data'),
     #('50 * * * *', 'spotify.cron.say_hello')
 ]
 

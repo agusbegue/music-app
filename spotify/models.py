@@ -10,7 +10,7 @@ class Job(models.Model):
 
 
 class JobRun(models.Model):
-    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+    name = models.CharField(max_length=30)
     date = models.DateField(auto_now_add=True)
     status = models.CharField(max_length=150)
     debug = models.BooleanField()

@@ -30,7 +30,7 @@ def execute_spotify_api_request(endpoint, access_token, request_type, query_para
             else:
                 return response.json()
         except Exception as e:
-            report(f'[scraper] - Error in request to spotify - {str(e)}. Response: {response.content}')
+            report(f'[scraper] - Error in request to spotify [{str(e)}] - Request url: {url} - Response: [{response.status_code}] {response.content}')
             return
     elif request_type == 'put':
         put(url, headers=headers)
