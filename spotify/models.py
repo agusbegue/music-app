@@ -1,4 +1,6 @@
 from djongo import models
+from django.contrib.auth.models import AbstractUser
+from rest_framework.authtoken.models import Token
 
 
 class Job(models.Model):
@@ -7,30 +9,42 @@ class Job(models.Model):
     start_date = models.DateField()
 
 
-class User(models.Model):
+class JobRun(models.Model):
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+    date = models.DateField(auto_now_add=True)
+    status = models.CharField(max_length=150)
+    debug = models.BooleanField()
+
+
+class User(AbstractUser):
     id = models.CharField(max_length=30, db_index=True, primary_key=True)
-    session_id = models.CharField(max_length=150, db_index=True)
+    username = None
+    password = None
+    first_name = None
+    last_name = None
+    email = None
+    USERNAME_FIELD = 'id'
+    REQUIRED_FIELDS = []
 
     @staticmethod
-    def create_or_update_user(token_data, user_data, session_id):
-        token_object = SpotifyToken.objects.filter(user__id=user_data.get('user_id')).select_related('user')
+    def create_or_update_user(token_data, user_data):
+        token_object = SpotifyToken.objects.filter(user__id=user_data['user_id']).select_related('user')
         if token_object.exists():
             token_object.update(**token_data)
-            for token_obj in token_object:
-                token_obj.session_id = session_id
-                token_obj.save()
-                if token_obj.user.session_id != session_id:
-                    token_obj.user.session_id = session_id
-                    token_obj.user.save()
+            token_object = token_object[0]
+            token_object.save()
+            user = token_object.user
         else:
-            user = User(id=user_data.pop('user_id'), session_id=session_id)
+            user = User(id=user_data.pop('user_id'))
             user.save()
             SpotifyToken(user=user, **token_data).save()
             UserProfile(user=user, **user_data).save()
 
+        api_token, _ = Token.objects.get_or_create(user=user)
+        return user, api_token
+
     def logout(self):
-        self.session_id = ''
-        self.save()
+        Token.objects.get(user=self).delete()
 
 
 class SpotifyToken(models.Model):

@@ -1,16 +1,9 @@
 import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import Grid from "@material-ui/core/Grid";
-import MenuIcon from '@material-ui/icons/Menu';
-import {Button} from "@material-ui/core";
-import ArrowBack from "@material-ui/icons"
-import Link from "@material-ui/core"
+import {Button, AppBar, Toolbar} from "@material-ui/core";
 import Cookies from "js-cookie"
 import SpotifyLogoBlack from "../../static/images/spotify-logo-black.png";
+import getAuthHeader, {logoutFrontend} from "./auth";
 
 const useStyles = makeStyles((theme) => ({
   toolBarTabs: {
@@ -24,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
     justifyContent: "center",
     alignItems: "center",
-    textDecoration: "none"
+    textDecoration: "none",
+    padding: "10px"
   },
   tab: {
     textAlign: "center",
@@ -43,15 +37,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar() {
-  const [tab, setTab] = useState('MY CHARTS')
   const classes = useStyles();
 
 
-  function userLogout() {
+  function logoutClick() {
     const csrftoken = Cookies.get('csrftoken');
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json", 'X-CSRFToken': csrftoken},
+      headers: { "Content-Type": "application/json", 'X-CSRFToken': csrftoken, ...getAuthHeader()},
       body: "{}",
     };
     fetch("/spotify/logout", requestOptions)
@@ -60,9 +53,8 @@ export default function Navbar() {
           window.location.replace('/');
         }
       })
-  }
-  function tabClick(event) {
-    setTab(event.target.id);
+    logoutFrontend();
+    window.location.replace('/login')
   }
 
   return (
@@ -72,14 +64,16 @@ export default function Navbar() {
           <div className={classes.toolBarTabs}>
             <a href="/" className={classes.title} >
               <img src={SpotifyLogoBlack} alt="spotify-logo" height="25" width="25" />
-              <text className={classes.title}> MUSICALLY</text>
+              <text className={classes.title}>MUSICALLY</text>
             </a>
-            <a href='/' className={classes.tab} id="MY CHARTS">
+            <a href='/charts' className={classes.tab} id="CHARTS">
               <text>MY CHARTS</text></a>
             <a href="/playlists" className={classes.tab} id="PLAYLISTS">
               <text>PLAYLISTS</text></a>
+            <a href="/historic" className={classes.tab} id="HISTORIC">
+              <text>HISTORIC</text></a>
           </div>
-          <Button className={classes.logoutButton} onClick={userLogout}>Logout</Button>
+          <Button className={classes.logoutButton} onClick={logoutClick}>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>

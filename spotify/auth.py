@@ -11,30 +11,25 @@ from .models import User, SpotifyToken
 from music_app.settings import SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
 
 
-class SpotifyAuthentication(BaseAuthentication):
+# class SpotifyAuthentication(BaseAuthentication):
+#
+#     def authenticate(self, request):
+#         is_authenticated, user = user_is_authenticated(request.session.session_key)
+#         if is_authenticated:
+#             return user, None
+#         return None
+#
+#
+# def user_is_authenticated(session_id):
+#     user = User.objects.filter(session_id=session_id)
+#     if user.exists():
+#         return True, user[0]
+#     else:
+#         return False, None
 
-    def authenticate(self, request):
-        is_authenticated, user = user_is_authenticated(request.session.session_key)
-        if is_authenticated:
-            return user, None
-        return None
 
-
-def user_is_authenticated(session_id):
-    user = User.objects.filter(session_id=session_id)
-    if user.exists():
-        return True, user[0]
-    else:
-        return False, None
-
-
-def get_user_access_token(session_id=None, user_id=None):
-    if session_id:
-        token_object = SpotifyToken.objects.get(user__session_id=session_id)
-    elif user_id:
-        token_object = SpotifyToken.objects.get(user_id=user_id)
-    else:
-        raise ValueError('No session id or user id provided')
+def get_user_access_token(user_id):
+    token_object = SpotifyToken.objects.get(user_id=user_id)
     if token_object.token_expiry <= timezone.now():
         refresh_spotify_token(token_object)
     return token_object.access_token

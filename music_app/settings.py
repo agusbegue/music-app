@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'music_app.wsgi.application'
 
 # Cron jobs
 CRONJOBS = [
-    ('0 0 * * *', 'spotify.cron.get_data'),
+    ('10 15 * * *', 'spotify.cron.get_data'),
     #('50 * * * *', 'spotify.cron.say_hello')
 ]
 
@@ -110,6 +110,8 @@ SESSION_COOKIE_AGE = 60*60*24*30
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
+AUTH_USER_MODEL = 'spotify.User'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

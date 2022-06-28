@@ -6,4 +6,4 @@ venv/
 credentials.yaml
 db.*
 notebooks/.ipynb_checkpoints/
-
+*.log

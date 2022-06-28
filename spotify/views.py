@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework.authentication import TokenAuthentication
+
 from .interaction import *
 from .models import User, SpotifyToken, UserProfile
-from .auth import get_auth_url, request_spotify_token, user_is_authenticated
-
+from .auth import get_auth_url, request_spotify_token
 from .cron import get_data
 
 
@@ -34,29 +36,27 @@ class SpotifyCallback(APIView):
         if token_data.pop('error', False):
             return redirect('frontend:')
 
-        if not request.session.exists(request.session.session_key):
-            request.session.create()
-        session_id = request.session.session_key
-
         user_data = get_spotify_user_data(access_token=token_data.get('access_token'))
-        User.create_or_update_user(token_data=token_data, user_data=user_data, session_id=session_id)
+        user, api_token = User.create_or_update_user(token_data=token_data, user_data=user_data)
 
-        return redirect('frontend:')
+        response = HttpResponseRedirect('/')
+        response.set_cookie('api_access_token', api_token.key)
+        return response
+        # return redirect('frontend:')
 
 
-class IsAuthenticated(APIView):
-
-    def get(self, request):
-        is_authenticated, _ = user_is_authenticated(request.session.session_key)
-        return Response({'is_authenticated': is_authenticated}, status=status.HTTP_200_OK)
+# class IsAuthenticated(APIView):
+#
+#     def get(self, request):
+#         is_authenticated, _ = user_is_authenticated(request.session.session_key)
+#         return Response({'is_authenticated': is_authenticated}, status=status.HTTP_200_OK)
 
 
 class Logout(APIView):
+    authentication_classes = [TokenAuthentication]
 
     def post(self, request):
-        # print('Entered logout view')
-        user = User.objects.get(session_id=request.session.session_key)
-        user.logout()
+        request.user.logout()
         return Response({}, status=status.HTTP_200_OK)
 
 

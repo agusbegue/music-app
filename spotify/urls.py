@@ -4,7 +4,6 @@ from .views import *
 urlpatterns = [
     path('get-auth-url', AuthURL.as_view()),
     path('redirect', SpotifyCallback.as_view()),
-    path('is-authenticated', IsAuthenticated.as_view()),
     path('logout', Logout.as_view()),
     path('get-data', GetData.as_view()),
     # path('current-song', CurrentSong.as_view()),

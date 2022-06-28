@@ -12,8 +12,8 @@ class Artist(models.Model):
     def to_basic(self):
         return ArtistBasic.from_artist(self)
 
-    def get(self, field):
-        return getattr(self, field)
+    def get(self, field, default=None):
+        return getattr(self, field, default)
 
     @staticmethod
     def create_from_dict(**kwargs):
@@ -48,32 +48,31 @@ class Track(models.Model):
     name = models.CharField(max_length=50)
     artists = models.ArrayField(ArtistBasic)
     release_date = models.DateField()
-    images = models.JSONField()
-    audio_features = models.JSONField()
-    forgotten = models.BooleanField(default=False)
+    relevant = models.BooleanField(default=False)
 
     def to_basic(self):
         return TrackBasic.from_track(self)
 
-    def get(self, field):
-        return getattr(self, field)
+    def get(self, field, default=None):
+        return getattr(self, field, default)
 
     @staticmethod
     def create_from_dict(**kwargs):
-        track_data = {field: kwargs.get(field) for field in list(set(Track.get_fields(False)) & set(kwargs.keys()))}
+        track_data = {field: kwargs.get(field) for field in list(set(Track.get_fields()) & set(kwargs.keys()))}
         track_data['artists'] = [ArtistBasic.from_artist(artist) for artist in kwargs.get('artists', [])]
         return Track(**track_data)
 
     @staticmethod
-    def get_fields(basic=True):
-        basic_fields = ['id', 'name', 'artists', 'images', 'release_date']
-        return basic_fields if basic else basic_fields + ['audio_features', 'forgotten']
+    def get_fields(basic=False):
+        fields = ['id', 'name', 'artists', 'release_date']
+        if not basic:
+            fields.append('relevant')
+        return fields
 
 
 class TrackBasic(models.Model):
     name = models.CharField()
     artist_names = models.CharField()
-    release_date = models.DateField()
     track_id = models.CharField(max_length=50)
 
     class Meta:
@@ -81,7 +80,7 @@ class TrackBasic(models.Model):
 
     @staticmethod
     def from_track(track):
-        return {'name': track.get('name'), 'release_date': track.get('release_date'), 'track_id': track.get('id'),
+        return {'name': track.get('name'), 'track_id': track.get('id'),
                 'artist_names': ', '.join([artist['name'] for artist in track.get('artists')])}
 
 

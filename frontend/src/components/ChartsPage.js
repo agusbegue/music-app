@@ -1,7 +1,8 @@
-import React, { useState, useEffect, Component } from "react";
-import { Grid, Card, Button, Typography } from "@material-ui/core";
+import React, { useState, useEffect } from "react";
+import { Grid, Card } from "@material-ui/core";
 import Navbar from "./Navbar";
 import UserTopsTable from "./UserTopsTable"
+import getAuthHeader from "./auth";
 
 export default function ChartsPage() {
   const [tableSize, setTableSize] = useState(30);
@@ -54,8 +55,9 @@ export default function ChartsPage() {
     return await fetch("/api/user-top-tracks?" + new URLSearchParams({
       time_range: timeRange,
       amount: tableSize,
-    })).then((response) => response.json())
-        .then((data) => {
+    }), {headers: getAuthHeader()})
+        .then(response => response.json())
+        .then(data => {
           return data
         });
   }
@@ -63,8 +65,9 @@ export default function ChartsPage() {
     return fetch("/api/user-top-artists?" + new URLSearchParams({
       time_range: timeRange,
       amount: tableSize,
-    })).then((response) => response.json())
-        .then((data) => {
+    }), {headers: getAuthHeader()})
+        .then(response => response.json())
+        .then(data => {
             return data
         });
   }

@@ -6,11 +6,10 @@ app_name = 'frontend'
 
 urlpatterns = [
     path('', index, name=''),
+    path('login', index),
+    path('charts', index),
     path('playlists', index),
-    path('info', index),
-    path('join', index),
-    path('create', index),
-    path('room/<str:roomCode>', index),
-    path('my-music', index),
+    path('historic', index),
+    # path('time-series', index),
     # path('favicon.ico', RedirectView.as_view(url='/static/frontend/favicon.ico'))
 ]

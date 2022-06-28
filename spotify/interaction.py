@@ -30,7 +30,7 @@ def execute_spotify_api_request(endpoint, access_token, request_type, query_para
             else:
                 return response.json()
         except Exception as e:
-            report(f'[scraper] - Error in request to spotify - {str(e)}')
+            report(f'[scraper] - Error in request to spotify - {str(e)}. Response: {response.content}')
             return
     elif request_type == 'put':
         put(url, headers=headers)
@@ -57,22 +57,28 @@ def get_playlists_data(access_token, playlist_ids):
     return playlists
 
 
-def get_playlists_data_v2(access_token, playlists_ids, batch_size=100):
+def get_playlists_data_v2(access_token, playlists_ids, latest_n=None, batch_size=100):
     playlists = {}
     for p_id in playlists_ids:
         playlists[p_id] = []
         i = 0
         total = 1
         while i < total:
+            if latest_n is not None:
+                batch_size = latest_n
             raw_data = execute_spotify_api_request(
                 f'playlists/{p_id}/tracks', access_token, 'get',
-                {'limit': batch_size, 'offset': i, 'fields': 'total,items(added_at,track.id)'}
+                {'limit': batch_size, 'offset': i, 'fields': 'total,items(added_at,track(id,popularity))'}
             )
             playlists[p_id].extend(list(map(lambda f: {
                 'track_id': f['track']['id'], 'added_at': f['added_at'], 'popularity': f['track']['popularity']
             }, raw_data['items'])))
             total = raw_data['total']
-            i += batch_size
+            if latest_n is not None and i == 0:
+                i = total - batch_size
+                playlists[p_id] = []
+            else:
+                i += batch_size
     return playlists
 
 
@@ -127,7 +133,9 @@ def get_artists_tracks(access_token, artist_ids, only_latest=False):
                       date(*map(int, f['release_date'].split('-'))) >= timezone.now().date()-timedelta(days=2), raw_data
         )) if only_latest else raw_data
         albums_tracks = get_album_tracks(access_token, list(map(lambda f: f['id'], raw_data)))
-        artists_tracks.update({artist_id: [{field: t.get(field) for field in Track.get_fields()} for t in albums_tracks]})
+        artists_tracks.update({artist_id: [{
+            field: t.get(field) for field in Track.get_fields(basic=True)
+        } for t in albums_tracks]})
     return artists_tracks
 
 
