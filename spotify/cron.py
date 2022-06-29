@@ -10,7 +10,7 @@ from api.models import (
 from spotify.interaction import (
     get_artists_data, get_playlists_data, get_tracks_popularity, get_artists_tracks
 )
-from music_app.settings import BASE_DIR
+from musically.settings import BASE_DIR
 
 # Logging
 logger = logging.getLogger('scraper')

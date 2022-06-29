@@ -1,6 +1,6 @@
 import requests
 
-from music_app.settings import TELEGRAM_BOT_TOKEN, TELEGRAM_BOT_CHAT_ID
+from musically.settings import TELEGRAM_BOT_TOKEN, TELEGRAM_BOT_CHAT_ID
 
 
 def report(message):

@@ -8,7 +8,7 @@ from rest_framework.authentication import BaseAuthentication
 
 from .settings import REDIRECT_URI, SCOPES
 from .models import User, SpotifyToken
-from music_app.settings import SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
+from musically.settings import SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
 
 
 # class SpotifyAuthentication(BaseAuthentication):
