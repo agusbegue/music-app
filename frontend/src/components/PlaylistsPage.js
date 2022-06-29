@@ -41,15 +41,22 @@ export default function PlaylistsPage() {
               ))}
           </Grid>
           <Grid container align="center" xs={10}>
-            <Grid item align="center" xs={6}>
-              {['popularity','danceability', 'energy', 'loudness', 'speechiness'].map(f => {
+            <Grid item align="center" xs={4}>
+              {['popularity','danceability'].map(f => {
                 return <BoxPlot name={f} data={playlistsData.map(p => {
                   return {x: p.name, y: p[f]}
                 })}/>
               })}
             </Grid>
-            <Grid item align="center" xs={6}>
-              {['acousticness', 'instrumentalness', 'liveness', 'tempo', 'valence'].map(f => {
+            <Grid item align="center" xs={4}>
+              {['acousticness', 'instrumentalness'].map(f => {
+                return <BoxPlot name={f} data={playlistsData.map(p => {
+                  return {x: p.name, y: p[f]}
+                })}/>
+              })}
+            </Grid>
+            <Grid item align="center" xs={4}>
+              {['energy', 'speechiness'].map(f => {
                 return <BoxPlot name={f} data={playlistsData.map(p => {
                   return {x: p.name, y: p[f]}
                 })}/>

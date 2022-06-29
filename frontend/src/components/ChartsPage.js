@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Card } from "@material-ui/core";
+import {Grid, Card, Typography} from "@material-ui/core";
 import Navbar from "./Navbar";
-import UserTopsTable from "./UserTopsTable"
+import ChartsTable from "./ChartsTable"
 import getAuthHeader from "./auth";
 
 export default function ChartsPage() {
-  const [tableSize, setTableSize] = useState(30);
+  const [tableSize, setTableSize] = useState(20);
   const [timeRanges, setTimeRanges] = useState(['short_term','medium_term','long_term']);
-  const [topTracks, setTopTracks] = useState([]);
-  const [topArtists, setTopArtists] = useState([]);
+  const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    // getTableInformation()
-    // .then(data => {console.log(data); return data})
-    //     .then(data => processTableInformation(data))
-    //     .then(data => {
-    //       setTopTracks(data['topTracks']);
-    //       setTopArtists(data['topArtists']);
-    //     });
-    setTopTracks([{'shortTerm': 'Malefica', 'mediumTerm': 'Acaramelao', 'longTerm': 'High'}])
+    getTableInformation()
+    .then(data => {console.log(data); return data})
+        .then(data => processTableInformation(data))
+        .then(data => setChartData(data));
+    // setTopTracks([{'shortTerm': 'Malefica', 'mediumTerm': 'Acaramelao', 'longTerm': 'High'}])
   }, [])
 
   async function getTableInformation() {
@@ -34,21 +30,22 @@ export default function ChartsPage() {
   async function processTableInformation(data) {
     let topTracksTmp = data['topTracks'];
     let topArtistsTmp = data['topArtists'];
-    let newTopTracks = [];
-    let newTopArtists = [];
+    let newChartData = [];
     for (let i=0; i<tableSize; i++) {
-      newTopTracks.push({
-        'shortTerm': topTracksTmp['short_term'][i],
-        'mediumTerm': topTracksTmp['medium_term'][i],
-        'longTerm': topTracksTmp['long_term'][i],
-      })
-      newTopArtists.push({
-        'shortTerm': topArtistsTmp['short_term'][i],
-        'mediumTerm': topArtistsTmp['medium_term'][i],
-        'longTerm': topArtistsTmp['long_term'][i],
+      newChartData.push({
+        'tracks': {
+          'shortTerm': topTracksTmp['short_term'][i],
+          'mediumTerm': topTracksTmp['medium_term'][i],
+          'longTerm': topTracksTmp['long_term'][i]
+        },
+        'artists': {
+          'shortTerm': topArtistsTmp['short_term'][i],
+          'mediumTerm': topArtistsTmp['medium_term'][i],
+          'longTerm': topArtistsTmp['long_term'][i],
+        }
       })
     }
-    return {'topArtists': newTopArtists, 'topTracks': newTopTracks}
+    return newChartData
   }
 
   async function getUserTopTracks(timeRange) {
@@ -75,12 +72,10 @@ export default function ChartsPage() {
   return (
       <Card>
         <Navbar />
-        <Grid container alignItems="center">
-          <Grid item align="center" xs={4}>
-            <UserTopsTable name='Artists' data={topArtists}/>
-          </Grid>
-          <Grid item align="center" xs={8}>
-            <UserTopsTable name='Tracks' data={topTracks}/>
+        <Typography>We asked Spotify, and these are some of your favourite artists and tracks...</Typography>
+        <Grid container alignItems="flex-start">
+          <Grid item align="center">
+            <ChartsTable data={chartData} />
           </Grid>
         </Grid>
       </Card>

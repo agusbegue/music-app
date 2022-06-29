@@ -5,18 +5,27 @@ import {Box, List, ListItem} from '@material-ui/core';
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@material-ui/core';
 
 
-export default function UserTopsTable({'name': name, 'data': data}) {
+export default function ChartsTable({'data': data}) {
 
   return (
     <Box sx={{ width: '50%' }}>
-        <Typography component="h5" variant="h5">
-          {name}
-        </Typography>
       <TableContainer component={Paper}>
           <Table sx={{ minWidth: 300 }} size='small' aria-label="a dense table">
             <TableHead>
               <TableRow>
+                <TableCell align="center" colSpan={1}> </TableCell>
+                <TableCell align="center" colSpan={3}>
+                  Tracks
+                </TableCell>
+                <TableCell align="center" colSpan={3}>
+                  Artists
+                </TableCell>
+              </TableRow>
+              <TableRow>
                 <TableCell>Rank</TableCell>
+                <TableCell>Short term</TableCell>
+                <TableCell>Medium term</TableCell>
+                <TableCell>Long term</TableCell>
                 <TableCell>Short term</TableCell>
                 <TableCell>Medium term</TableCell>
                 <TableCell>Long term</TableCell>
@@ -26,9 +35,12 @@ export default function UserTopsTable({'name': name, 'data': data}) {
               {data?.map((values, index) => (
                 <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                   <TableCell>{index+1}</TableCell>
-                  <TableCell>{values?.shortTerm}</TableCell>
-                  <TableCell>{values?.mediumTerm}</TableCell>
-                  <TableCell>{values?.longTerm}</TableCell>
+                  <TableCell>{values?.tracks.shortTerm}</TableCell>
+                  <TableCell>{values?.tracks.mediumTerm}</TableCell>
+                  <TableCell>{values?.tracks.longTerm}</TableCell>
+                  <TableCell>{values?.artists.shortTerm}</TableCell>
+                  <TableCell>{values?.artists.mediumTerm}</TableCell>
+                  <TableCell>{values?.artists.longTerm}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

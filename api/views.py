@@ -1,4 +1,3 @@
-import random
 import numpy as np
 
 from rest_framework import status
