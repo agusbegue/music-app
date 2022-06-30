@@ -16,7 +16,7 @@ The user will redirected to Spotify's site and asked to login and authorize acce
 
 Once logged in, the user will have access to the app, and have available the three screens listed in the navigation bar:
 
-1) **Historic**: this section is about artists' historical popularity (an index provided by Spotify). The user can select several artists in the search bar, click *search artists* and the frontend will download the artists' historic data from the database (collected by the [crawler](#the-crawler)) and display it.
+1) **Historic**: this section is about artists' historical popularity (an index provided by Spotify) and their releases. The user can select several artists in the search bar, click *search artists* and the frontend will download the artists' historic data from the database (collected by the [crawler](#the-crawler)) and display it.
 
 ![alt text](https://github.com/agusbegue/musically/blob/master/frontend/static/images/historic.png?raw=true)
 
