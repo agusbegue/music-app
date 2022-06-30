@@ -30,7 +30,7 @@ logger.addHandler(info_log)
 
 BATCH_SIZE = 500
 
-DEBUG_MODE = True
+DEBUG_MODE = False
 
 
 def say_hello():
