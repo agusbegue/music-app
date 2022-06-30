@@ -45,8 +45,8 @@ The app has error reporting via a [Telegram Bots](https://core.telegram.org/bots
 
 Clone the repository
 ```bash
-git clone https://github.com/agusbegue/realestate-scraper.git
-cd realestate-scraper
+git clone https://github.com/agusbegue/musically.git
+cd musically
 ```
 
 Database
